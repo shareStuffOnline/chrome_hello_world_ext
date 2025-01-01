@@ -1,9 +1,10 @@
 {
   "manifest_version": 3,
-  "name": "Chat Monitor Extension",
+  "name": "Page HTML Extractor",
   "version": "1.0",
-  "description": "Monitors chat responses and notifies the user.",
-  "permissions": ["notifications", "tabs", "activeTab"],
+  "description": "Extracts HTML of the current page.",
+  "permissions": ["tabs", "activeTab"],
+  "host_permissions": ["<all_urls>"],
   "background": {
     "service_worker": "background.js"
   },
@@ -12,7 +13,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"], 
+      "matches": ["<all_urls>"],
       "js": ["content.js"]
     }
   ]
