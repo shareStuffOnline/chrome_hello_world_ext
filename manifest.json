@@ -3,7 +3,7 @@
   "name": "Chat Monitor Extension",
   "version": "1.0",
   "description": "Monitors chat responses and notifies the user.",
-  "permissions": ["notifications", "tabs"],
+  "permissions": ["notifications", "tabs", "activeTab"],
   "background": {
     "service_worker": "background.js"
   },
@@ -12,7 +12,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://chatgpt.com/*"], // Replace with the target website
+      "matches": ["<all_urls>"], 
       "js": ["content.js"]
     }
   ]
